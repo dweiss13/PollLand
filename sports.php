@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 <title>P O L L - L A N D</title> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stylesheet.css">
 <style>
-
 html { 
   background: url(bckg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -91,13 +89,8 @@ html {
     <h6><center>click to go back</center></h6>
   </div>
 </div>
-
-<div class="w3-container">
-</div>
-
-
-
-
+     
+<h1><center>Everything Sports Polls!</center></h1>
 
 <script>
 function openLeftMenu() {
@@ -121,24 +114,15 @@ function closeRightMenu() {
 <?php
 require_once "config.php";
 // Initialize the session
-session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-
-    
-}
-$sql = "SELECT * FROM question WHERE id ORDER BY RAND()  
-LIMIT 1 ";
+$sql = "SELECT * FROM question WHERE category = 'Sports' AND id ORDER BY RAND()  
+LIMIT 1";
     $result = $link->query($sql);
     
     if ($result->num_rows > 0){
-      
-      
       while($row = $result->fetch_assoc()) {
-        echo "<center><form method='POST' action='homepage.php'><h1>Polls Polls Polls!<h1><input hidden value='" . $row["id"] . "' name='quest'> <br>";
+        echo "<center><form method='POST' action='Sports.php'><h1>Polls Polls Polls!<h1><input hidden value='" . $row["id"] . "' name='quest'> <br>";
         $questid = $row["id"];
         echo "Poll Number $questid";
         echo "<h2>" .$row["question"] . "<h2>";
@@ -168,8 +152,6 @@ $sql = "SELECT * FROM answers WHERE questid = $questid";
       if ($link->query($sql) === TRUE) {
     }
   }
-  echo "<center><p>Song Of The Day!!!</p><br>
-  <iframe src='https://open.spotify.com/embed/track/6u819n2Bmz2fx4XPXh5aLJ' width='300' height='380' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe></center>"
 
 ?>
 </html>

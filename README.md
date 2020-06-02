@@ -1,2 +1,0 @@
-# PollLand
- polling site

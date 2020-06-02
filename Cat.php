@@ -11,9 +11,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 <html>
 <title>P O L L - L A N D  ---  C A T A G O R I E S</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stylesheet.css">
 <style>
+  html { 
+  background: url(bckg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -29,6 +38,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   padding: 25px 0;
   font-size: 100px;
 }
+
+a:link, a:visited {
+  background-color:  #ffffff00;
+  color: seafoam;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 </style>
 <body>
 
@@ -38,15 +56,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <a href="logout.php" class="w3-bar-item w3-button">Sign Out</a>
   <a href="register.php" class="w3-bar-item w3-button">Create an Account</a>
   <a href="reset-password.php" class="w3-bar-item w3-button">Reset Password</a>
-  <a href="whatsnew.php" class="w3-bar-item w3-button">Whats New?</a>
-  <a href="legal.php" class="w3-bar-item w3-button">TOA / Legal</a>
 </div>
 
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
   <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
   <a href="Cat.php" class="w3-bar-item w3-button">Categories</a>
   <a href="map.php" class="w3-bar-item w3-button">Create a poll</a>
-  <a href="rand.php" class="w3-bar-item w3-button">Random poll</a>
+  <a href="whatsnew.php" class="w3-bar-item w3-button">Whats New?</a>
+  <a href="legal.php" class="w3-bar-item w3-button">TOA / Legal</a>
 </div>
 
 <div class="w3-teal">
@@ -58,23 +75,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </div>
 </div>
 <div class="w3-container"> 
-        <h1><center>C A T A G O R I E S</center></h1>
+        <h1><center>C A T E G O R I E S</center></h1>
 <p><center>What kind of polls do you want to take</center></p>
 
 
+
+
+
+
+
 <div class="grid-container">
-  <div class="item1">Funny</div>
-  <div class="item2">Serious</div>
-  <div class="item3">School</div>  
-  <div class="item4">WYR</div>
-  <div class="item5">Sports</div>
-  <div class="item6">Film</div>
-  <div class="item7">Riddles</div>
-  <div class="item8">Music</div>
-  <div class="item1">Politics</div>
-  <div class="item2">AMQ</div>
-  <div class="item3">RBR</div>  
-  <div class="item4">other</div>
+  <div class="item1"> <a href="funny.php" class="w3-bar-item w3-button">Funny</a></div>
+  <div class="item2"> <a href="serious.php" class="w3-bar-item w3-button">Serious</a></div>
+  <div class="item3"> <a href="school.php" class="w3-bar-item w3-button">School</a></div>  
+  <div class="item4"> <a href="WYR.php" class="w3-bar-item w3-button">WYR</a></div>
+  <div class="item5"> <a href="sports.php" class="w3-bar-item w3-button">Sports</a></div>
+  <div class="item6"> <a href="film.php" class="w3-bar-item w3-button">Film</a></div>
+  <div class="item7"> <a href="riddles.php" class="w3-bar-item w3-button">Riddles</a></div>
+  <div class="item8"> <a href="music.php" class="w3-bar-item w3-button">Music</a></div>
+  <div class="item1"> <a href="politics.php" class="w3-bar-item w3-button">Politics</a></div>
+  <div class="item2"> <a href="AMQ.php" class="w3-bar-item w3-button">AMQ</a></div>
+  <div class="item3"> <a href="RBR.php" class="w3-bar-item w3-button">RBR</a></div>  
+  <div class="item4"> <a href="other.php" class="w3-bar-item w3-button">other</a></div>
 
 </div>
      
